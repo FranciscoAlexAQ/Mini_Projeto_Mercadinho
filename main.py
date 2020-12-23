@@ -60,35 +60,35 @@ def escolhas():
 
 def cadastro():
     print('Muito bem, vamos lá: ')
-    nome = input('Digite o nome do produto que deseja cadastrar: ').lower().strip()
-    preco = input('Agora digite o preço do produto: ').strip()
-    quant = input('E por fim, digite sua quantidade: ').strip()
+    nome = input('Digite o nome do produto que deseja cadastrar: ').title().strip()
+    preco = input('Agora digite o preço do produto: ').title().strip()
+    quant = input('E por fim, digite sua quantidade: ').title().strip()
     cadastrarProdutos(nome, preco, quant)
 
 
 def delete():
     print('Muito bem, vamos lá: ')
-    nome = input('Digite o nome do produto que deseja excluir: ')
+    nome = input('Digite o nome do produto que deseja excluir: ').title()
     excluirProdutos(nome)
 
 
 def atualizacao():
     print('Muito bem, vamos lá: ')
-    nome = input('Digite o nome do produto que deseja atualizar: ')
+    nome = input('Digite o nome do produto que deseja atualizar: ').title()
 
-    nomeMuda = input('Deseja mudar o nome? Se não, dê ENTER: ')
+    nomeMuda = input('Digite o novo nome se deseja mudar o nome. Se não, dê ENTER: ').title()
     if nomeMuda == '':
         for i in range(len(listarProdutos())):
             if nome == listarProdutos()[i][0]:
                 nomeMuda = listarProdutos()[i][0]
                 break
-    precoMuda = input('Deseja mudar o preço? Se não, dê ENTER: ')
+    precoMuda = input('Digite o novo preço se deseja mudar o preço. Se não, dê ENTER: ').title()
     if precoMuda == '':
         for i in range(len(listarProdutos())):
             if nome == listarProdutos()[i][0]:
                 precoMuda = listarProdutos()[i][1]
                 break
-    quantidadeMuda = input('Deseja mudar a quantidade? Se não, dê ENTER: ')
+    quantidadeMuda = input('Digite a nova quantidade se deseja mudar a quantidade. Se não, dê ENTER: ').title()
     if quantidadeMuda == '':
         for i in range(len(listarProdutos())):
             if nome == listarProdutos()[i][0]:
